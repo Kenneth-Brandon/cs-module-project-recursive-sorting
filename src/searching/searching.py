@@ -1,4 +1,10 @@
 # TO-DO: Implement a recursive implementation of binary search
+
+# Compare x with the middle element.
+# If x matches with the middle element, we return the mid index.
+# Else if x is greater than the mid element, then x can only lie in the right(greater) half subarray after the mid element. Then we apply the algorithm again for the right half.
+# Else if x is smaller, the target x must lie in the left(lower) half. So we apply the algorithm for the left half.
+
 import math
 
 
@@ -43,3 +49,6 @@ def agnostic_binary_search(arr, target, start=0, end=None):
             return agnostic_binary_search(arr, target, mid + 1, end)
         else:
             return agnostic_binary_search(arr, target, start, mid - 1)
+
+
+# A good example of a program that is data agnostic is one which retrieves, updates, sorts, and / or writes, data using SQL statements. The program neither knows nor cares how underlying files holding the data are organized, and , depending on whether an SQL interface module (compatibility layer) to handle differences between different database systems was employed, might be completely unaware what database system was being used.
